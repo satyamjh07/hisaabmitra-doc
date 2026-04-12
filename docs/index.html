@@ -3,141 +3,166 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>HisaabMitra Docs</title>
+    <title>Hisaab Mitra Docs</title>
     <link rel="stylesheet" href="../marketing.css" />
   </head>
   <body class="docs-page">
     <header class="sf-header docs-header">
       <nav class="sf-nav container">
         <a class="sf-brand" href="/">
-          <img src="img.png" class="sf-brand-icon" alt="platform logo">
-          <span class="sf-brand-text">HisaabMitra Docs</span>
+          <img src="../img.png" class="sf-brand-icon" alt="Hisaab Mitra logo" />
+          <span class="sf-brand-text">Hisaab Mitra Docs</span>
         </a>
         <div class="sf-nav-cta">
           <a class="btn btn-ghost" href="/">Back to Landing</a>
-          <a class="btn btn-primary" href="https://sellerflow.vercel.app/">Open App</a>
+          <a class="btn btn-primary" href="/app/">Open App</a>
         </div>
       </nav>
     </header>
 
     <main class="docs-layout container">
       <aside class="docs-sidebar" id="docs-sidebar">
-        <button class="btn btn-ghost docs-toggle" id="docs-toggle">
-          Sections
-        </button>
-        <input
-          id="docs-search"
-          class="form-input docs-search"
-          placeholder="Search docs..."
-        />
+        <button class="btn btn-ghost docs-toggle" id="docs-toggle">Sections</button>
+        <input id="docs-search" class="form-input docs-search" placeholder="Search docs..." />
         <nav id="docs-nav">
-          <a href="#introduction">Introduction</a>
-          <a href="#getting-started">Getting Started</a>
-          <a href="#account-setup">Account Setup</a>
-          <a href="#subscription-plans">Subscription Plans</a>
-          <a href="#free-test-tier">Free Test Tier (30 min)</a>
-          <a href="#creating-first-design">Creating First Design</a>
-          <a href="#using-templates">Using Templates</a>
-          <a href="#watermark-setup">Watermark Setup</a>
-          <a href="#store-image-feature">Store Image Feature</a>
-          <a href="#exporting">Exporting</a>
-          <a href="#troubleshooting">Troubleshooting</a>
-          <a href="#faqs">FAQs</a>
+          <a href="#seller-dashboard">Seller Dashboard</a>
+          <a href="#invoice-templates">Invoice Templates</a>
+          <a href="#billing-gst">Billing & GST</a>
+          <a href="#store-image-creator">Store Image Creator</a>
+          <a href="#watermark-controls">Watermark Controls</a>
+          <a href="#export-ready-assets">Export Ready Assets</a>
+          <a href="#mobile-seller-tools">Mobile Friendly Seller Tools</a>
+          <a href="#subscription-controls">Subscription Controls</a>
+          <a href="#analytics-dashboard">Analytics Dashboard</a>
+          <a href="#logo-branding">Logo Branding</a>
+          <a href="#customer-management">Customer Management</a>
+          <a href="#order-tracking">Order Tracking</a>
         </nav>
       </aside>
 
       <section class="docs-content" id="docs-content">
-        <article id="introduction">
-          <h2>Introduction</h2>
-          <p>
-            HisaabMitra is a creator-first design and seller operations platform.
-          </p>
-          <div class="callout">
-            Tip: Keep your brand presets consistent for faster output.
-          </div>
+        <article id="seller-dashboard">
+          <h2>Seller Dashboard</h2>
+          <h3>Overview</h3><p>Central command center for invoice volume, recent orders, and seller activity.</p>
+          <h3>Workflow</h3><p>Login → Open dashboard → Review KPIs → Take action on pending operations.</p>
+          <h3>API/Data Structure</h3><pre><code>{ dashboardSummary: { totalOrders, totalInvoices, pendingActions } }</code></pre>
+          <h3>UI Usage</h3><p>Use metric cards, quick actions, and daily insights to prioritize work.</p>
+          <h3>Screenshots Placeholder</h3><div class="img-placeholder">Placeholder: Seller dashboard home screen</div>
+          <h3>FAQs</h3><p>Use refresh if data appears stale; dashboard sync aligns with cloud updates.</p>
         </article>
-        <article id="getting-started">
-          <h2>Getting Started</h2>
-          <ol>
-            <li>Create an account.</li>
-            <li>Verify email.</li>
-            <li>Open dashboard.</li>
-          </ol>
-          <pre><code>Flow: Sign up → Verify → Start building</code></pre>
+
+        <article id="invoice-templates">
+          <h2>Invoice Templates</h2>
+          <h3>Overview</h3><p>Reusable invoice formats for fast and consistent billing output.</p>
+          <h3>Workflow</h3><p>Select template → Customize business fields → Save preset → Generate invoice.</p>
+          <h3>API/Data Structure</h3><pre><code>{ invoiceTemplate: { id, name, fontFamily, sections, taxMode } }</code></pre>
+          <h3>UI Usage</h3><p>Switch templates from the billing panel and preview before finalizing.</p>
+          <h3>Screenshots Placeholder</h3><div class="img-placeholder">Placeholder: Invoice template selector</div>
+          <h3>FAQs</h3><p>Template presets reduce manual edits and help maintain professional consistency.</p>
         </article>
-        <article id="account-setup">
-          <h2>Account Setup</h2>
-          <p>
-            Set your store name, contact email, and logo settings in profile.
-          </p>
-          <div class="img-placeholder">
-            Image placeholder: Account settings screen
-          </div>
+
+        <article id="billing-gst">
+          <h2>Billing & GST</h2>
+          <h3>Overview</h3><p>Automated billing structure with GST-compatible fields for compliant invoicing.</p>
+          <h3>Workflow</h3><p>Add customer → Add items → Apply GST → Generate and export invoice.</p>
+          <h3>API/Data Structure</h3><pre><code>{ invoice: { invoiceNo, customerId, lineItems, gstPercent, totals } }</code></pre>
+          <h3>UI Usage</h3><p>Use the tax settings block to choose GST rates and invoice modes.</p>
+          <h3>Screenshots Placeholder</h3><div class="img-placeholder">Placeholder: Billing and GST configuration</div>
+          <h3>FAQs</h3><p>GST values are reflected automatically in totals and export documents.</p>
         </article>
-        <article id="subscription-plans">
-          <h2>Subscription Plans</h2>
-          <p>
-            Plans currently include Free, Trial, Bronze (₹49), and Platinum
-            (₹199).
-          </p>
-          <div class="callout">
-            Best Practice: Use Platinum for custom branding workflows.
-          </div>
+
+        <article id="store-image-creator">
+          <h2>Store Image Creator</h2>
+          <h3>Overview</h3><p>Create branded storefront assets tied to products, offers, and campaigns.</p>
+          <h3>Workflow</h3><p>Pick product record → Apply store visual format → Save and export.</p>
+          <h3>API/Data Structure</h3><pre><code>{ storeAsset: { sku, title, branding, dimensions, exportFormat } }</code></pre>
+          <h3>UI Usage</h3><p>Use the store tools panel to build and queue ready-to-share assets.</p>
+          <h3>Screenshots Placeholder</h3><div class="img-placeholder">Placeholder: Store image creator workflow</div>
+          <h3>FAQs</h3><p>Use template locking to preserve brand format across all campaigns.</p>
         </article>
-        <article id="free-test-tier">
-          <h2>Free Test Tier (30 min)</h2>
-          <p>
-            The trial plan gives temporary full access and is one-time per
-            account.
-          </p>
+
+        <article id="watermark-controls">
+          <h2>Watermark Controls</h2>
+          <h3>Overview</h3><p>Add watermark overlays to exported assets for brand and ownership protection.</p>
+          <h3>Workflow</h3><p>Upload watermark → Set opacity and position → Apply per export preset.</p>
+          <h3>API/Data Structure</h3><pre><code>{ watermark: { type, source, opacity, position, scale } }</code></pre>
+          <h3>UI Usage</h3><p>Manage watermark rules in branding settings and reuse by template.</p>
+          <h3>Screenshots Placeholder</h3><div class="img-placeholder">Placeholder: Watermark controls panel</div>
+          <h3>FAQs</h3><p>Platinum supports advanced watermark and brand cleanup controls.</p>
         </article>
-        <article id="creating-first-design">
-          <h2>Creating First Design</h2>
-          <ol>
-            <li>Select template</li>
-            <li>Customize text & font</li>
-            <li>Set brand style</li>
-            <li>Export</li>
-          </ol>
+
+        <article id="export-ready-assets">
+          <h2>Export Ready Assets</h2>
+          <h3>Overview</h3><p>Commercial-grade exports for invoices, store assets, and reports.</p>
+          <h3>Workflow</h3><p>Finalize record → Select export format → Download or share securely.</p>
+          <h3>API/Data Structure</h3><pre><code>{ exportJob: { recordId, type, format, quality, status } }</code></pre>
+          <h3>UI Usage</h3><p>Use export queue to monitor status and rerun failed jobs.</p>
+          <h3>Screenshots Placeholder</h3><div class="img-placeholder">Placeholder: Export queue and status view</div>
+          <h3>FAQs</h3><p>Exports are plan-aware; premium users get priority processing.</p>
         </article>
-        <article id="using-templates">
-          <h2>Using Templates</h2>
-          <p>Reuse template styles to keep consistent visual identity.</p>
+
+        <article id="mobile-seller-tools">
+          <h2>Mobile Friendly Seller Tools</h2>
+          <h3>Overview</h3><p>Operate key billing and order workflows directly from mobile devices.</p>
+          <h3>Workflow</h3><p>Sign in → Open responsive dashboard → Update orders/invoices on the go.</p>
+          <h3>API/Data Structure</h3><pre><code>{ mobileSession: { userId, deviceType, activeModules } }</code></pre>
+          <h3>UI Usage</h3><p>Use compact cards and sticky actions for faster mobile execution.</p>
+          <h3>Screenshots Placeholder</h3><div class="img-placeholder">Placeholder: Mobile seller tools cards</div>
+          <h3>FAQs</h3><p>All core seller modules are optimized to stack cleanly on mobile cards.</p>
         </article>
-        <article id="watermark-setup">
-          <h2>Watermark Setup</h2>
-          <p>
-            Add logo/watermark overlays to protect and brand your exported
-            images.
-          </p>
+
+        <article id="subscription-controls">
+          <h2>Subscription Controls</h2>
+          <h3>Overview</h3><p>Manage Free Trial, Bronze, and Platinum plans with clear entitlement mapping.</p>
+          <h3>Workflow</h3><p>Open plan page → Select plan → Confirm billing → Sync access controls.</p>
+          <h3>API/Data Structure</h3><pre><code>{ subscription: { plan, price, period, trialUsed, entitlements } }</code></pre>
+          <h3>UI Usage</h3><p>Use account settings to track plan status and renewal windows.</p>
+          <h3>Screenshots Placeholder</h3><div class="img-placeholder">Placeholder: Subscription controls and plan cards</div>
+          <h3>FAQs</h3><p>Platinum pricing is ₹99 for 2 months with 1 month free, as listed on pricing.</p>
         </article>
-        <article id="store-image-feature">
-          <h2>Store Image Feature</h2>
-          <p>
-            Create storefront-ready promotional visuals with brand-safe layouts.
-          </p>
+
+        <article id="analytics-dashboard">
+          <h2>Analytics Dashboard</h2>
+          <h3>Overview</h3><p>Seller growth analytics for billing volume, order trends, and customer insights.</p>
+          <h3>Workflow</h3><p>Select date range → Review metrics → Export report for business decisions.</p>
+          <h3>API/Data Structure</h3><pre><code>{ analytics: { range, revenue, invoiceCount, repeatCustomers, trends } }</code></pre>
+          <h3>UI Usage</h3><p>Use filter chips and comparison cards for performance analysis.</p>
+          <h3>Screenshots Placeholder</h3><div class="img-placeholder">Placeholder: Analytics dashboard charts</div>
+          <h3>FAQs</h3><p>Advanced analytics and reports are unlocked in Platinum.</p>
         </article>
-        <article id="exporting">
-          <h2>Exporting</h2>
-          <p>Export optimized assets for social posting and client delivery.</p>
+
+        <article id="logo-branding">
+          <h2>Logo Branding</h2>
+          <h3>Overview</h3><p>Upload and apply your own logo to invoices and exported seller assets.</p>
+          <h3>Workflow</h3><p>Upload logo → Set size and position → Save brand profile.</p>
+          <h3>API/Data Structure</h3><pre><code>{ branding: { logoUrl, placement, watermarkPolicy, brandVisibility } }</code></pre>
+          <h3>UI Usage</h3><p>Set per-template logo presets from the branding module.</p>
+          <h3>Screenshots Placeholder</h3><div class="img-placeholder">Placeholder: Logo branding settings</div>
+          <h3>FAQs</h3><p>Custom logo support is included in premium branding controls.</p>
         </article>
-        <article id="troubleshooting">
-          <h2>Troubleshooting</h2>
-          <p>
-            If trial/plan state looks outdated, refresh from the settings
-            subscription module.
-          </p>
+
+        <article id="customer-management">
+          <h2>Customer Management</h2>
+          <h3>Overview</h3><p>Maintain customer records, invoice history, and billing preferences.</p>
+          <h3>Workflow</h3><p>Create customer profile → Link invoices → Track payment follow-ups.</p>
+          <h3>API/Data Structure</h3><pre><code>{ customer: { id, name, phone, gstin, invoices, balance } }</code></pre>
+          <h3>UI Usage</h3><p>Use searchable tables and quick-edit side panels.</p>
+          <h3>Screenshots Placeholder</h3><div class="img-placeholder">Placeholder: Customer management table</div>
+          <h3>FAQs</h3><p>Each customer profile syncs with billing, order tracking, and analytics.</p>
         </article>
-        <article id="faqs">
-          <h2>FAQs</h2>
-          <p>
-            For billing, watermark, and access FAQs, check the landing FAQ
-            section or contact support.
-          </p>
+
+        <article id="order-tracking">
+          <h2>Order Tracking</h2>
+          <h3>Overview</h3><p>Track order progress from placement to fulfillment in one workspace.</p>
+          <h3>Workflow</h3><p>Create order → Update status milestones → Close order after delivery.</p>
+          <h3>API/Data Structure</h3><pre><code>{ order: { id, customerId, status, timeline, amount, fulfillment } }</code></pre>
+          <h3>UI Usage</h3><p>Use status chips and timeline cards to keep teams aligned.</p>
+          <h3>Screenshots Placeholder</h3><div class="img-placeholder">Placeholder: Order tracking board</div>
+          <h3>FAQs</h3><p>Order status feeds analytics and customer communication workflows.</p>
         </article>
       </section>
     </main>
 
-    <script src="../js/marketing.js"></script>
+    <script src="../marketing.js"></script>
   </body>
 </html>
